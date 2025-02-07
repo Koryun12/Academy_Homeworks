@@ -1,9 +1,9 @@
 #include<iostream>
-int main()
-{
-	std::cout << "Hello World!!" << std::endl;
-return 0;
 
-}//barev dzez
-// helllooo
-//lokal
+
+struct Book {
+	char title[100];
+	char author[100];
+	char isbn[20];
+	int avaliable;
+}
