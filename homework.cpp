@@ -6,3 +6,4 @@ return 0;
 
 }//barev dzez
 // helllooo
+//lokal
