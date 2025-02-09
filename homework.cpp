@@ -17,7 +17,7 @@ struct Book {
 	std::cout << "The Library Is Full!" << std::endl;
   }
 	book NewBook;
-	std::cout << "Enter Book Title! ";
+	std::cout << "Enter Book Titlle! ";
 	std::cin.ignore();
 	std::cin.getline(NewBook.title,100);
 	std::cout << "Enter The Author Of Book! ";
