@@ -30,3 +30,20 @@ struct Book {
 	std::cout << "The Book Succesfully is Done!" << std::endl;
 
 }
+	void ListBook(){
+	   if(bookCount == 0){
+	std::cout << "No Books!" << std::endl;		
+	
+	}
+	  for(int i = 0 ; i < bookCount; ++i) {
+	std::cout << "Title! " << library[i].title << std::endl;
+}	std::cout << "Author! " << library[i].author << std::endl;
+	std::cout << "ISBN! " << library[i].isbn << std::endl;
+	  if(library[i].avaliable == 1){
+	std::cout << "Avaliable! " << std::endl;
+	}else{
+	std::cout <<"NOT! " <<std::endl;
+  } 
+	std::cout << std::endl;
+  	
+}
