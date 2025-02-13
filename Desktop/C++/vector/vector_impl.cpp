@@ -9,7 +9,14 @@ void Vector::reallocate(int new_capacity) {
 	m_data = new_data;
 }
 
-Vector::Vector(const Vector& other){}
+Vector::Vector(const Vector& other){
+	m_size = other.m_size;
+	m_capacity = other.m_capacity;
+	m_data = new int[m_capacity];
+	for(int i = 0; i < m_size; i++){
+		m_data[i] = other.m_data[i];
+	}
+}
 int Vector::at(size_t index) const {
 	if(index > m_size){
 		std::cout << "Index Out Of Range!" << std::endl;
