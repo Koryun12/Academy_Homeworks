@@ -48,16 +48,49 @@ void Vector::reserve(size_t cap) {
 		reallocate(cap);
 	}
 }
-int Vector::front () const {}
-int Vector::back () const {}
+int Vector::front () const {
+	if(m_size == 0){
+		std::cout << "Vector is empty!";
+	}
+	return m_data[0];
+}
+int Vector::back () const {
+	if(m_size == 0){
+		std::cout << "Vector is empty!";
+	}
+	return m_data[m_size - 1];
+}
 bool Vector::isEmpty() const {
 	if(m_size == 0){
 		return true;
 	}
 	return false;
 }
-void Vector::shrink_to_fit() {}
-void Vector::insert (size_t index, int value) {}
-void Vector::erase (size_t index) {}
-void Vector::clear () {}
-
+void Vector::shrink_to_fit() {
+	reallocate(m_size);
+}
+void Vector::insert (size_t index, int value) {
+	if(index > m_size){
+		std::cout << "Index Out Of Range!" << std::endl;
+	}
+	if(m_size == m_capacity){
+		reallocate(m_capacity * 2);
+	}
+	for(int i = m_size; i > index; i--){
+		m_data[i] = m_data[i - 1];
+	}
+	m_data[index] = value;
+	m_size++;
+}
+void Vector::erase (size_t index) {
+	if(index > m_size){
+		std::cout << "Index Out Of Range!" << std::endl;
+	}
+	for(int i = index; i < m_size - 1; i++){
+		m_data[i] = m_data[i + 1];
+	}
+	m_size--;
+}
+void Vector::clear () {
+	m_size = 0;
+}
