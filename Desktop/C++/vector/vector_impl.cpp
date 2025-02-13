@@ -92,5 +92,8 @@ void Vector::erase (size_t index) {
 	m_size--;
 }
 void Vector::clear () {
+	delete[] m_data;
+	m_data = nullptr;
+	m_capacity = 0;
 	m_size = 0;
 }
