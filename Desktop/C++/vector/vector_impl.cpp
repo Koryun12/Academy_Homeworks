@@ -4,6 +4,7 @@ void Vector::reallocate(int new_capacity) {
 	int* new_data = new int[m_capacity];
 	for(int i = 0; i < m_size; i++){
 		new_data[i] = m_data[i];
+		m_capacity = new_capacity;
 	}
 	delete[] m_data;
 	m_data = new_data;
@@ -28,6 +29,9 @@ int Vector::at(size_t index) const {
 void Vector::push_back(int value) {
 	if(m_size == m_capacity){
 		reallocate(m_capacity * 2);
+	}
+	if(m_size == 0){
+		m_data = new int[m_capacity];
 	}
 	m_data[m_size] = value;
 	m_size++;
