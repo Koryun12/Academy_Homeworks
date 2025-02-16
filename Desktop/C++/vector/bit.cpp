@@ -20,6 +20,7 @@ class BitSet {
         bits[pos] = false;
     }
     void flip(size_t pos) {
+        getPosition(pos);
         bits[pos] = !bits[pos];
     }
     bool test(size_t pos) const {
